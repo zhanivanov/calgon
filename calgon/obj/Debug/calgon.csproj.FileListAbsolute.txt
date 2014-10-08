@@ -10,3 +10,9 @@ C:\Users\AMILO\Desktop\projects\calgon\calgon\bin\Debug\calgon.pdb
 C:\Users\AMILO\Desktop\projects\calgon\calgon\obj\Debug\calgon.csprojResolveAssemblyReference.cache
 C:\Users\AMILO\Desktop\projects\calgon\calgon\obj\Debug\calgon.exe
 C:\Users\AMILO\Desktop\projects\calgon\calgon\obj\Debug\calgon.pdb
+C:\Users\Zhan\Documents\Visual Studio 2013\Projects\calgonRepo\calgon\bin\Debug\calgon.exe.config
+C:\Users\Zhan\Documents\Visual Studio 2013\Projects\calgonRepo\calgon\obj\Debug\calgon.exe
+C:\Users\Zhan\Documents\Visual Studio 2013\Projects\calgonRepo\calgon\obj\Debug\calgon.pdb
+C:\Users\Zhan\Documents\Visual Studio 2013\Projects\calgonRepo\calgon\bin\Debug\calgon.exe
+C:\Users\Zhan\Documents\Visual Studio 2013\Projects\calgonRepo\calgon\bin\Debug\calgon.pdb
+C:\Users\Zhan\Documents\Visual Studio 2013\Projects\calgonRepo\calgon\obj\Debug\calgon.csprojResolveAssemblyReference.cache
