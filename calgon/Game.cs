@@ -12,7 +12,7 @@ namespace calgon
         public static void Main()
         {
             Console.CursorVisible = false;
-            GameField gameField = new GameField(10, 10);
+            GameField gameField = new GameField();
             Player tempPlayer = new Player("$");
             for (int col = 0; col < gameField.matrix.GetLength(0); col++)
             {

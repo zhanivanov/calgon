@@ -53,7 +53,7 @@ namespace calgon
         private void ClearTrace()
         {
             Console.SetCursorPosition(currPos.PosX, currPos.PosY);
-            Console.Write(".");
+            Console.Write(" ");
             this.currPos.PosX = this.PosX;
             this.currPos.PosY = this.PosY;
         }
