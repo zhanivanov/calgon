@@ -1,0 +1,6 @@
+c:\users\zhan\documents\visual studio 2013\Projects\calgon\calgon\bin\Debug\calgon.exe.config
+c:\users\zhan\documents\visual studio 2013\Projects\calgon\calgon\obj\Debug\calgon.csprojResolveAssemblyReference.cache
+c:\users\zhan\documents\visual studio 2013\Projects\calgon\calgon\bin\Debug\calgon.exe
+c:\users\zhan\documents\visual studio 2013\Projects\calgon\calgon\bin\Debug\calgon.pdb
+c:\users\zhan\documents\visual studio 2013\Projects\calgon\calgon\obj\Debug\calgon.exe
+c:\users\zhan\documents\visual studio 2013\Projects\calgon\calgon\obj\Debug\calgon.pdb
