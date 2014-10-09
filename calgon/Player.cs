@@ -9,10 +9,10 @@ namespace calgon
     class Player : Entity
     {
         private string playerSymbol;
-        private GameObject currPos = new GameObject(0, 0);
+        private GameObject currPos = new GameObject(1, 1);
 
         public Player(string playerSymbol)
-            : base(0, 0, 0, 0, 0, 1, 1)
+            : base(0, 0, 0, 1, 1, 1, 1, ConsoleColor.Blue)
         {
             this.playerSymbol = playerSymbol;
         }
@@ -25,28 +25,60 @@ namespace calgon
                 while (Console.KeyAvailable) Console.ReadKey(true);
                 if (pressedKey.Key == ConsoleKey.LeftArrow)
                 {
-                    this.PosX -= 1;
+                    if (!CollisionCheck(this.PosX, this.PosY, this.SizeX, this.SizeY, "left"))
+                    {
+                        this.PosX -= 1;
+                        ClearTrace();
+                    }
+                    else
+                    {
+                        Utilities.PrintStringOnPositon(60, 5, "Leftward Collision!", ConsoleColor.Red);
+                    }
                 }
                 else if (pressedKey.Key == ConsoleKey.RightArrow)
                 {
-                    this.PosX += 1;
+                    if (!CollisionCheck(this.PosX, this.PosY, this.SizeX, this.SizeY, "right"))
+                    {
+                        this.PosX += 1;
+                        ClearTrace();
+                    }
+                    else
+                    {
+                        Utilities.PrintStringOnPositon(60, 10, "Rightward Collision!", ConsoleColor.Red);
+                    }
                 }
                 else if (pressedKey.Key == ConsoleKey.UpArrow)
                 {
-                    this.PosY -= 1;
+                    if (!CollisionCheck(this.PosX, this.PosY, this.SizeX, this.SizeY, "up"))
+                    {
+                        this.PosY -= 1;
+                        ClearTrace();
+                    }
+                    else
+                    {
+                        Utilities.PrintStringOnPositon(60, 15, "Upward Collision!", ConsoleColor.Red);
+                    }
                 }
                 else if (pressedKey.Key == ConsoleKey.DownArrow)
                 {
-                    this.PosY += 1;
+                    if (!CollisionCheck(this.PosX, this.PosY, this.SizeX, this.SizeY, "down"))
+                    {
+                        this.PosY += 1;
+                        ClearTrace();
+                    }
+                    else
+                    {
+                        Utilities.PrintStringOnPositon(60, 20, "Downward Collision!", ConsoleColor.Red);
+                    }
                 }
                 DrawPlayer();
-                ClearTrace();
             }
         }
 
         public void DrawPlayer()
         {
             Console.SetCursorPosition(this.PosX, this.PosY);
+            Console.ForegroundColor = this.Color;
             Console.Write(this.playerSymbol);
         }
 

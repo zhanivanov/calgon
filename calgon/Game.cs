@@ -14,11 +14,11 @@ namespace calgon
             Console.CursorVisible = false;
             GameField gameField = new GameField();
             Player tempPlayer = new Player("$");
-            for (int col = 0; col < gameField.matrix.GetLength(0); col++)
+            for (int col = 0; col < GameField.matrix.GetLength(0); col++)
             {
-                for (int row = 0; row < gameField.matrix.GetLength(1); row++)
-                {   
-                    Console.Write(gameField.matrix[col, row]);
+                for (int row = 0; row < GameField.matrix.GetLength(1); row++)
+                {
+                    Console.Write(GameField.matrix[col, row]);
                 }
                 Console.WriteLine();
             }

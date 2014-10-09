@@ -10,14 +10,14 @@ namespace calgon
     {
         private int sizeX;
         private int sizeY;
-        public string[,] matrix;
+        public static string[,] matrix;
         public string[] inputFile;
         public GameField()
         {
             this.inputFile = System.IO.File.ReadAllLines(@"../../../projectTest.txt");
             this.sizeX = inputFile.Length;
             this.sizeY = inputFile[0].Length;
-            this.matrix = new string[sizeX, sizeY];
+            matrix = new string[sizeX, sizeY];
 
             for (int row = 0; row < sizeX - 1; row++)
             {
