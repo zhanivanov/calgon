@@ -19,7 +19,7 @@ namespace calgon
             this.sizeY = inputFile[0].Length;
             matrix = new string[sizeX, sizeY];
 
-            for (int row = 0; row < sizeX - 1; row++)
+            for (int row = 0; row < sizeX; row++)
             {
                 for (int col = 0; col < sizeY; col++)
                 {
