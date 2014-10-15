@@ -37,6 +37,9 @@ namespace calgon
                 Console.WriteLine();
             }
             tempPlayer.DrawPlayer();
+
+            Gate gate = new Gate(1, 33, "*", ConsoleColor.Red);
+            gate.DrawGate();
             while (true)
             {
                 tempPlayer.MovePlayer();
