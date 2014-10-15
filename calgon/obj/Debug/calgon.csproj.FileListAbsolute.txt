@@ -22,3 +22,9 @@ D:\SoftUni\Ниво 2\OOP\teamproject\calgon\calgon\obj\Debug\calgon.pdb
 D:\SoftUni\Ниво 2\OOP\teamproject\calgon\calgon\obj\Debug\calgon.csprojResolveAssemblyReference.cache
 D:\SoftUni\Ниво 2\OOP\teamproject\calgon\calgon\bin\Debug\calgon.exe
 D:\SoftUni\Ниво 2\OOP\teamproject\calgon\calgon\bin\Debug\calgon.pdb
+C:\Users\AMILO\Desktop\TestCalgon.git\trunk\calgon\bin\Debug\calgon.exe.config
+C:\Users\AMILO\Desktop\TestCalgon.git\trunk\calgon\obj\Debug\calgon.exe
+C:\Users\AMILO\Desktop\TestCalgon.git\trunk\calgon\obj\Debug\calgon.pdb
+C:\Users\AMILO\Desktop\TestCalgon.git\trunk\calgon\bin\Debug\calgon.exe
+C:\Users\AMILO\Desktop\TestCalgon.git\trunk\calgon\bin\Debug\calgon.pdb
+C:\Users\AMILO\Desktop\TestCalgon.git\trunk\calgon\obj\Debug\calgon.csprojResolveAssemblyReference.cache

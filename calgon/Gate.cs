@@ -29,13 +29,12 @@ namespace calgon
         public void DrawGate()
         {
             Console.ForegroundColor = this.gateColor;
-            for (int row = this.X; row < this.X+5; row++)
+            for (int row = this.X; row < this.X + 5; row++)
             {
-                for (int col = this.Y; col < this.Y+5; col++)
+                for (int col = this.Y; col < this.Y + 5; col++)
                 {
-                    GameField.matrix[col , row ] = this.GateSymbol;
-                    
-                    Utilities.PrintStringOnPositon(col , row, this.GateSymbol, this.GateColor);
+                    GameField.matrix[row, col] = this.GateSymbol;
+                    Utilities.PrintStringOnPositon(col, row, this.GateSymbol, this.GateColor);
                 }
             }
         }
