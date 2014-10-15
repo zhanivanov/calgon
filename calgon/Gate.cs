@@ -10,7 +10,6 @@ namespace calgon
     {
         private int x;
         private int y;
-        private string[,] gateMatrix = new string[5, 5];
         private string gateSymbol;
         private ConsoleColor gateColor;
 
@@ -29,15 +28,15 @@ namespace calgon
 
         public void DrawGate()
         {
-            Console.SetCursorPosition(this.X, this.Y);
             Console.ForegroundColor = this.gateColor;
-            for (int row = 0; row < this.gateMatrix.GetLength(0); row++)
+            for (int row = this.X; row < this.X+5; row++)
             {
-                for (int col = 0; col < this.gateMatrix.GetLength(1); col++)
+                for (int col = this.Y; col < this.Y+5; col++)
                 {
-                    Utilities.PrintStringOnPositon(col + this.X, row + this.Y, this.GateSymbol, this.GateColor);
+                    GameField.matrix[col , row ] = this.GateSymbol;
+                    
+                    Utilities.PrintStringOnPositon(col , row, this.GateSymbol, this.GateColor);
                 }
-                Console.WriteLine();
             }
         }
     }
