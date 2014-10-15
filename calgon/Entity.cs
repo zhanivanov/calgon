@@ -37,7 +37,7 @@ namespace calgon
             switch (direction)
             {
                 case "left":
-                    if (GameField.matrix[this.PosY, this.PosX - this.SizeX] != "@")
+                    if (GameField.matrix[this.PosY, this.PosX - this.SizeX] != "█")
                     {
                         return false;
                     }
@@ -46,7 +46,7 @@ namespace calgon
                         return true;
                     }
                 case "right":
-                    if (GameField.matrix[this.PosY, this.PosX + this.SizeX] != "@")
+                    if (GameField.matrix[this.PosY, this.PosX + this.SizeX] != "█")
                     {
                         return false;
                     }
@@ -55,7 +55,7 @@ namespace calgon
                         return true;
                     }
                 case "up":
-                    if (GameField.matrix[this.PosY - this.SizeY, this.PosX] != "@")
+                    if (GameField.matrix[this.PosY - this.SizeY, this.PosX] != "█")
                     {
                         return false;
                     }
@@ -64,7 +64,7 @@ namespace calgon
                         return true;
                     }
                 case "down":
-                    if (GameField.matrix[this.PosY + this.SizeY, this.PosX] != "@")
+                    if (GameField.matrix[this.PosY + this.SizeY, this.PosX] != "█")
                     {
                         return false;
                     }

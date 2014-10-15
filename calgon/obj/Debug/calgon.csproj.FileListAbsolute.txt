@@ -16,3 +16,9 @@ C:\Users\Zhan\Documents\Visual Studio 2013\Projects\calgonRepo\calgon\obj\Debug\
 C:\Users\Zhan\Documents\Visual Studio 2013\Projects\calgonRepo\calgon\bin\Debug\calgon.exe
 C:\Users\Zhan\Documents\Visual Studio 2013\Projects\calgonRepo\calgon\bin\Debug\calgon.pdb
 C:\Users\Zhan\Documents\Visual Studio 2013\Projects\calgonRepo\calgon\obj\Debug\calgon.csprojResolveAssemblyReference.cache
+D:\SoftUni\Ниво 2\OOP\teamproject\calgon\calgon\bin\Debug\calgon.exe.config
+D:\SoftUni\Ниво 2\OOP\teamproject\calgon\calgon\obj\Debug\calgon.exe
+D:\SoftUni\Ниво 2\OOP\teamproject\calgon\calgon\obj\Debug\calgon.pdb
+D:\SoftUni\Ниво 2\OOP\teamproject\calgon\calgon\obj\Debug\calgon.csprojResolveAssemblyReference.cache
+D:\SoftUni\Ниво 2\OOP\teamproject\calgon\calgon\bin\Debug\calgon.exe
+D:\SoftUni\Ниво 2\OOP\teamproject\calgon\calgon\bin\Debug\calgon.pdb
