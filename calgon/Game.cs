@@ -38,7 +38,7 @@ namespace calgon
             }
             tempPlayer.DrawPlayer();
 
-            Gate gate = new Gate(1, 33, "*", ConsoleColor.Red);
+            Gate gate = new Gate(33, 1, "R", ConsoleColor.Red);
             gate.DrawGate();
             while (true)
             {
