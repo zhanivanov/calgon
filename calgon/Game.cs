@@ -11,16 +11,20 @@ namespace calgon
     {
         public static void Main()
         {  
-        string[,] testPlayer = new string[3,3];
-        testPlayer[0, 0] = " ";
-        testPlayer[0, 1] = "/";
-        testPlayer[0, 2] = "/";
-        testPlayer[1, 0] = "o";
-        testPlayer[1, 1] = "|";
-        testPlayer[1, 2] = " ";
-        testPlayer[2, 0] = " ";
-        testPlayer[2, 1] = "\\";
-        testPlayer[2, 2] = "\\";
+            string[,] testPlayer = new string[3,3];
+            testPlayer[0, 0] = " ";
+            testPlayer[0, 1] = "/";
+            testPlayer[0, 2] = "/";
+            testPlayer[1, 0] = "o";
+            testPlayer[1, 1] = "|";
+            testPlayer[1, 2] = " ";
+            testPlayer[2, 0] = " ";
+            testPlayer[2, 1] = "\\";
+            testPlayer[2, 2] = "\\";
+            Console.BufferHeight = 40;
+            Console.BufferWidth = 150;
+            Console.WindowHeight = 40;
+            Console.WindowWidth = 150;
             Console.CursorVisible = false;
             GameField gameField = new GameField();
             Player tempPlayer = new Player(testPlayer);

@@ -37,15 +37,15 @@ namespace calgon
             switch (direction)
             {
                 case "left":
-                    if (GameField.matrix[this.PosY, this.PosX - 1] == "@")
+                    if (GameField.matrix[this.PosY, this.PosX - 1] == "█")
                     {
                         return true;
                     }
-                    else if (GameField.matrix[this.PosY + 1, this.PosX - 1] == "@")
+                    else if (GameField.matrix[this.PosY + 1, this.PosX - 1] == "█")
                     {
                         return true;
                     }
-                    else if (GameField.matrix[this.PosY + 2, this.PosX - 1] == "@")
+                    else if (GameField.matrix[this.PosY + 2, this.PosX - 1] == "█")
                     {
                         return true;
                     }
@@ -54,15 +54,15 @@ namespace calgon
                         return false;
                     }
                 case "right":
-                    if (GameField.matrix[this.PosY, this.PosX + this.SizeX] == "@")
+                    if (GameField.matrix[this.PosY, this.PosX + this.SizeX] == "█")
                     {
                         return true;
                     }
-                    else if (GameField.matrix[this.PosY + 1, this.PosX + this.SizeX] == "@")
+                    else if (GameField.matrix[this.PosY + 1, this.PosX + this.SizeX] == "█")
                     {
                         return true;
                     }
-                    else if (GameField.matrix[this.PosY + 2, this.PosX + this.SizeX] == "@")
+                    else if (GameField.matrix[this.PosY + 2, this.PosX + this.SizeX] == "█")
                     {
                         return true;
                     }
@@ -71,15 +71,15 @@ namespace calgon
                         return false;
                     }
                 case "up":
-                    if (GameField.matrix[this.PosY - 1, this.PosX] == "@")
+                    if (GameField.matrix[this.PosY - 1, this.PosX] == "█")
                     {
                         return true;
                     }
-                    else if (GameField.matrix[this.PosY - 1, this.PosX + 1] == "@")
+                    else if (GameField.matrix[this.PosY - 1, this.PosX + 1] == "█")
                     {
                         return true;
                     }
-                    else if (GameField.matrix[this.PosY - 1, this.PosX + 2] == "@")
+                    else if (GameField.matrix[this.PosY - 1, this.PosX + 2] == "█")
                     {
                         return true;
                     }
@@ -89,15 +89,15 @@ namespace calgon
                     }
                 case "down":
 
-                    if (GameField.matrix[this.PosY + this.SizeY, this.PosX] == "@")
+                    if (GameField.matrix[this.PosY + this.SizeY, this.PosX] == "█")
                     {
                         return true;
                     }
-                    else if (GameField.matrix[this.PosY + this.SizeY, this.PosX + 1] == "@")
+                    else if (GameField.matrix[this.PosY + this.SizeY, this.PosX + 1] == "█")
                     {
                         return true;
                     }
-                    else if (GameField.matrix[this.PosY + this.SizeY, this.PosX + 2] == "@")
+                    else if (GameField.matrix[this.PosY + this.SizeY, this.PosX + 2] == "█")
                     {
                         return true;
                     }
