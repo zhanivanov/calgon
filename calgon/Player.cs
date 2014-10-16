@@ -8,13 +8,22 @@ namespace calgon
 {
     class Player : Entity
     {
-        private string[,] playerSymbol;
+        private string[,] playerSymbol = new string[3,3];
+        
         private GameObject currPos = new GameObject(1, 1);
 
-        public Player(string[,] playerSymbol)
+        public Player()
             : base(0, 0, 0, 1, 1, 3, 3, ConsoleColor.Green)
         {
-            this.playerSymbol = playerSymbol;
+            playerSymbol[0, 0] = " ";
+            playerSymbol[0, 1] = "/";
+            playerSymbol[0, 2] = "/";
+            playerSymbol[1, 0] = "o";
+            playerSymbol[1, 1] = "|";
+            playerSymbol[1, 2] = " ";
+            playerSymbol[2, 0] = " ";
+            playerSymbol[2, 1] = "\\";
+            playerSymbol[2, 2] = "\\";
         }
 
         public void MovePlayer()
@@ -23,6 +32,7 @@ namespace calgon
             {
                 ConsoleKeyInfo pressedKey = Console.ReadKey(true);
                 while (Console.KeyAvailable) Console.ReadKey(true);
+
                 if (pressedKey.Key == ConsoleKey.LeftArrow)
                 {
                     if (!CollisionCheck(this.PosX, this.PosY, this.SizeX, this.SizeY, "left"))
@@ -32,7 +42,7 @@ namespace calgon
                     }
                     else
                     {
-                        Utilities.PrintStringOnPositon(60, 5, "Leftward Collision!", ConsoleColor.Red);
+                        Utilities.PrintStringOnPositon(143, 2, "<", ConsoleColor.Red);
                     }
                 }
                 else if (pressedKey.Key == ConsoleKey.RightArrow)
@@ -44,7 +54,7 @@ namespace calgon
                     }
                     else
                     {
-                        Utilities.PrintStringOnPositon(60, 10, "Rightward Collision!", ConsoleColor.Red);
+                        Utilities.PrintStringOnPositon(145, 2, ">", ConsoleColor.Red);
                     }
                 }
                 else if (pressedKey.Key == ConsoleKey.UpArrow)
@@ -56,7 +66,7 @@ namespace calgon
                     }
                     else
                     {
-                        Utilities.PrintStringOnPositon(60, 15, "Upward Collision!", ConsoleColor.Red);
+                        Utilities.PrintStringOnPositon(144, 1, "^", ConsoleColor.Red);
                     }
                 }
                 else if (pressedKey.Key == ConsoleKey.DownArrow)
@@ -68,7 +78,7 @@ namespace calgon
                     }
                     else
                     {
-                        Utilities.PrintStringOnPositon(60, 20, "Downward Collision!", ConsoleColor.Red);
+                        Utilities.PrintStringOnPositon(144, 3, "v", ConsoleColor.Red);
                     }
                 }
                 DrawPlayer();
