@@ -32,6 +32,7 @@ namespace calgon
             {
                 ConsoleKeyInfo pressedKey = Console.ReadKey(true);
                 while (Console.KeyAvailable) Console.ReadKey(true);
+
                 if (pressedKey.Key == ConsoleKey.LeftArrow)
                 {
                     if (!CollisionCheck(this.PosX, this.PosY, this.SizeX, this.SizeY, "left"))
@@ -41,7 +42,7 @@ namespace calgon
                     }
                     else
                     {
-                        Utilities.PrintStringOnPositon(60, 5, "Leftward Collision!", ConsoleColor.Red);
+                        Utilities.PrintStringOnPositon(143, 2, "<", ConsoleColor.Red);
                     }
                 }
                 else if (pressedKey.Key == ConsoleKey.RightArrow)
@@ -53,7 +54,7 @@ namespace calgon
                     }
                     else
                     {
-                        Utilities.PrintStringOnPositon(60, 10, "Rightward Collision!", ConsoleColor.Red);
+                        Utilities.PrintStringOnPositon(145, 2, ">", ConsoleColor.Red);
                     }
                 }
                 else if (pressedKey.Key == ConsoleKey.UpArrow)
@@ -65,7 +66,7 @@ namespace calgon
                     }
                     else
                     {
-                        Utilities.PrintStringOnPositon(60, 15, "Upward Collision!", ConsoleColor.Red);
+                        Utilities.PrintStringOnPositon(144, 1, "^", ConsoleColor.Red);
                     }
                 }
                 else if (pressedKey.Key == ConsoleKey.DownArrow)
@@ -77,7 +78,7 @@ namespace calgon
                     }
                     else
                     {
-                        Utilities.PrintStringOnPositon(60, 20, "Downward Collision!", ConsoleColor.Red);
+                        Utilities.PrintStringOnPositon(144, 3, "v", ConsoleColor.Red);
                     }
                 }
                 DrawPlayer();
