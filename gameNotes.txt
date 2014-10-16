@@ -1,5 +1,5 @@
 collectable types
-	@-helath
-	$-exp
-	#-gun
-	*-bonus points
+	@ - health
+	$ - experience
+	# - gun
+	* - bonus points (acummulated for highscore of some kind)
