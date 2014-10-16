@@ -13,7 +13,7 @@ namespace calgon
         private int health;
         private ConsoleColor color;
 
-        public Entity(int exp, int level, int health, int posX = 0, int posY = 0, int sizeX = 1, int sizeY = 1, ConsoleColor color = ConsoleColor.Blue) 
+        public Entity(int exp, int level, int health, int posX = 0, int posY = 0, int sizeX = 1, int sizeY = 1, ConsoleColor color = ConsoleColor.Blue)
             : base(posX, posY, sizeX, sizeY)
         {
             this.Exp = exp;
@@ -37,41 +37,76 @@ namespace calgon
             switch (direction)
             {
                 case "left":
-                    if (GameField.matrix[this.PosY, this.PosX - this.SizeX] != "█")
+                    if (GameField.matrix[this.PosY, this.PosX - 1] != " ")
                     {
-                        return false;
+                        return true;
+                    }
+                    else if (GameField.matrix[this.PosY + 1, this.PosX - 1] != " ")
+                    {
+                        return true;
+                    }
+                    else if (GameField.matrix[this.PosY + 2, this.PosX - 1] != " ")
+                    {
+                        return true;
                     }
                     else
                     {
-                        return true;
+                        return false;
                     }
                 case "right":
-                    if (GameField.matrix[this.PosY, this.PosX + this.SizeX] != "█")
+                    if (GameField.matrix[this.PosY, this.PosX + this.SizeX] != " ")
                     {
-                        return false;
+                        return true;
+                    }
+                    else if (GameField.matrix[this.PosY + 1, this.PosX + this.SizeX] != " ")
+                    {
+                        return true;
+                    }
+                    else if (GameField.matrix[this.PosY + 2, this.PosX + this.SizeX] != " ")
+                    {
+                        return true;
                     }
                     else
                     {
-                        return true;
+                        return false;
                     }
                 case "up":
-                    if (GameField.matrix[this.PosY - this.SizeY, this.PosX] != "█")
+                    if (GameField.matrix[this.PosY - 1, this.PosX] != " ")
                     {
-                        return false;
+                        return true;
+                    }
+                    else if (GameField.matrix[this.PosY - 1, this.PosX + 1] != " ")
+                    {
+                        return true;
+                    }
+                    else if (GameField.matrix[this.PosY - 1, this.PosX + 2] != " ")
+                    {
+                        return true;
                     }
                     else
                     {
-                        return true;
+                        return false;
                     }
                 case "down":
-                    if (GameField.matrix[this.PosY + this.SizeY, this.PosX] != "█")
-                    {
-                        return false;
-                    }
-                    else
+
+                    if (GameField.matrix[this.PosY + this.SizeY, this.PosX] != " ")
                     {
                         return true;
                     }
+                    else if (GameField.matrix[this.PosY + this.SizeY, this.PosX + 1] != " ")
+                    {
+                        return true;
+                    }
+                    else if (GameField.matrix[this.PosY + this.SizeY, this.PosX + 2] != " ")
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+
+
             }
             return true;
         }

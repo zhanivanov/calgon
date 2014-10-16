@@ -8,11 +8,11 @@ namespace calgon
 {
     class Player : Entity
     {
-        private string playerSymbol;
+        private string[,] playerSymbol;
         private GameObject currPos = new GameObject(1, 1);
 
-        public Player(string playerSymbol)
-            : base(0, 0, 0, 1, 1, 1, 1, ConsoleColor.Blue)
+        public Player(string[,] playerSymbol)
+            : base(0, 0, 0, 1, 1, 3, 3, ConsoleColor.Green)
         {
             this.playerSymbol = playerSymbol;
         }
@@ -79,13 +79,40 @@ namespace calgon
         {
             Console.SetCursorPosition(this.PosX, this.PosY);
             Console.ForegroundColor = this.Color;
-            Console.Write(this.playerSymbol);
+            int countLine = 1;
+            for (int i = 0; i < playerSymbol.GetLength(0); i++)
+            {
+                for (int j = 0; j < playerSymbol.GetLength(1); j++)
+                {
+                    if ((j == 2 && i == 2) && ((this.PosX % 2 == 0) ^ (this.PosY % 2 == 0)))
+                    {
+                        Console.Write(" ");
+                    }
+                    else
+                    {
+                        if ((j == 1 && i == 2) && ((this.PosX % 2 == 0) ^ (this.PosY % 2 == 0)))
+                        {
+                            Console.Write("/");
+                        }
+                        else
+                        {
+                            Console.Write(this.playerSymbol[j, i]);
+                        }
+                    }
+                }
+                Console.SetCursorPosition(this.PosX, this.PosY + countLine);
+                countLine++;
+            }
         }
 
         private void ClearTrace()
         {
             Console.SetCursorPosition(currPos.PosX, currPos.PosY);
-            Console.Write(" ");
+            Console.Write("   ");
+            Console.SetCursorPosition(currPos.PosX, currPos.PosY + 1);
+            Console.Write("   ");
+            Console.SetCursorPosition(currPos.PosX, currPos.PosY + 2);
+            Console.Write("   ");
             this.currPos.PosX = this.PosX;
             this.currPos.PosY = this.PosY;
         }

@@ -1,0 +1,5 @@
+collectable types
+	@-helath
+	$-exp
+	#-gun
+	*-bonus points
