@@ -16,16 +16,16 @@ namespace calgon
         public Entity(int exp, int level, int health, int posX = 0, int posY = 0, int sizeX = 1, int sizeY = 1, ConsoleColor color = ConsoleColor.Blue)
             : base(posX, posY, sizeX, sizeY)
         {
-            this.Exp = exp;
-            this.Level = level;
-            this.Health = health;
-            this.Color = color;
+            Exp = exp;
+            Level = level;
+            Health = health;
+            Color = color;
         }
 
-        public int Exp { get; set; }
-        public int Level { get; set; }
-        public int Health { get; set; }
-        public ConsoleColor Color { get; set; }
+        public static int Exp { get; set; }
+        public static int Level { get; set; }
+        public static int Health { get; set; }
+        public static ConsoleColor Color { get; set; }
 
         public void Move()
         {

@@ -88,7 +88,7 @@ namespace calgon
         public void DrawPlayer()
         {
             Console.SetCursorPosition(this.PosX, this.PosY);
-            Console.ForegroundColor = this.Color;
+            Console.ForegroundColor = Color;
             int countLine = 1;
             for (int i = 0; i < playerSymbol.GetLength(0); i++)
             {

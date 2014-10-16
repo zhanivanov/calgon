@@ -13,9 +13,9 @@ namespace calgon
         {  
             // Setting the parameters of the Console
             Console.BufferHeight = 40;
-            Console.BufferWidth = 150;
+            Console.BufferWidth = 180;
             Console.WindowHeight = 40;
-            Console.WindowWidth = 150;
+            Console.WindowWidth = 180;
             Console.CursorVisible = false;
             GameField gameField = new GameField();
 
@@ -32,6 +32,11 @@ namespace calgon
 
             Gate gate = new Gate(33, 1, "R", ConsoleColor.Red);
             gate.DrawGate();
+
+            Collectable healthCollectable = new HealthCollectable(10, 19);
+            healthCollectable.drawCollectable();
+
+            SideInfo.PrintInfo();
             while (true)
             {
                 tempPlayer.MovePlayer();
