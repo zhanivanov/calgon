@@ -33,7 +33,7 @@ namespace calgon
             {
                 for (int col = this.Y; col < this.Y + 5; col++)
                 {
-                    // GameField.matrix[row, col] = this.GateSymbol;
+                    GameField.matrix[row, col] = this.GateSymbol;
                     Utilities.PrintStringOnPositon(col, row, this.GateSymbol, this.GateColor);
                 }
             }

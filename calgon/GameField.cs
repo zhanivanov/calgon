@@ -14,7 +14,7 @@ namespace calgon
         public string[] inputFile;
         public GameField()
         {
-            this.inputFile = System.IO.File.ReadAllLines(@"../../../projectTest.txt");
+            this.inputFile = System.IO.File.ReadAllLines(@"../../TextFiles/GameField.txt");
             this.sizeX = inputFile.Length;
             this.sizeY = inputFile[0].Length;
             matrix = new string[sizeX, sizeY];
