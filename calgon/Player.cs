@@ -13,7 +13,7 @@ namespace calgon
         private GameObject currPos = new GameObject(1, 1);
 
         public Player()
-            : base(0, 0, 0, 1, 1, 3, 3, ConsoleColor.Green)
+            : base(0, 0, 0, 0, 1, 1, 3, 3, ConsoleColor.Green)
         {
             playerSymbol[0, 0] = " ";
             playerSymbol[0, 1] = "/";

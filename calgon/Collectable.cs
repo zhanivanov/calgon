@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace calgon
 {
-    class Collectable : GameObject
+    abstract class Collectable : GameObject
     {
+        public static string[] collectableSymbolsArr = { "@", "$", "#", "*" };
         private string collectableSymbol;
         private ConsoleColor color;
 
@@ -26,5 +27,7 @@ namespace calgon
             GameField.matrix[this.PosY, this.PosX] = this.CollectableSymbol;
             Utilities.PrintStringOnPositon(this.PosX, this.PosY, this.CollectableSymbol, this.Color);
         }
+
+        public abstract Collectable[] GenerateCollectables(int count);
     }
 }

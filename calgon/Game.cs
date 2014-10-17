@@ -11,11 +11,13 @@ namespace calgon
     {
         public static void Main()
         {  
+            int bufferHeight = 40;
+            int bufferWidth = 180;
             // Setting the parameters of the Console
-            Console.BufferHeight = 40;
-            Console.BufferWidth = 180;
-            Console.WindowHeight = 40;
-            Console.WindowWidth = 180;
+            Console.BufferHeight = bufferHeight;
+            Console.BufferWidth = bufferWidth;
+            Console.WindowHeight = bufferHeight;
+            Console.WindowWidth = bufferWidth;
             Console.CursorVisible = false;
             GameField gameField = new GameField();
 
@@ -33,9 +35,20 @@ namespace calgon
             Gate gate = new Gate(33, 1, "R", ConsoleColor.Red);
             gate.DrawGate();
 
-            Collectable healthCollectable = new HealthCollectable(10, 19);
-            healthCollectable.drawCollectable();
+            Collectable[] healthCollectables = new HealthCollectable(0, 0).GenerateCollectables(5);
+            Collectable[] experienceCollectables = new ExperienceCollectable(0, 0).GenerateCollectables(2);
+            Collectable[] gunCollectables = new GunCollectable(0, 0).GenerateCollectables(4);
+            Collectable[] bonusCollectables = new BonusCollectable(0, 0).GenerateCollectables(10);
 
+            Collectable[][] allCollectables = { healthCollectables, experienceCollectables, gunCollectables, bonusCollectables };
+
+            for (int i = 0; i < allCollectables.Length; i++)
+            {
+                for (int j = 0; j < allCollectables[i].Length; j++)
+                {
+                    allCollectables[i][j].drawCollectable();
+                }
+            }
             SideInfo.PrintInfo();
             while (true)
             {

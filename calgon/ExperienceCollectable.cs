@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace calgon
 {
-    class HealthCollectable : Collectable
+    class ExperienceCollectable : Collectable
     {
-        public static int bonusHealth = 10;
+        public static int bonusExp = 10;
 
-        public HealthCollectable(int posX, int posY) : base(posX, posY, "@", ConsoleColor.Blue)
+        public ExperienceCollectable(int posX, int posY) : base(posX, posY, "$", ConsoleColor.Yellow)
         {
 
         }
@@ -22,12 +22,12 @@ namespace calgon
             int nextX = 0;
             int nextY = 0;
 
-            Collectable[] collectables = new HealthCollectable[count];
+            Collectable[] collectables = new ExperienceCollectable[count];
             for (int i = 0; i < count; i++)
             {
                 nextX = randomXGenerator.Next(1, 150);
                 nextY = randomYGenerator.Next(1, 35);
-                collectables[i] = new HealthCollectable(nextX, nextY);
+                collectables[i] = new ExperienceCollectable(nextX, nextY);
             }
 
             return collectables;

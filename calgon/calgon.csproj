@@ -41,13 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BonusCollectable.cs" />
     <Compile Include="Collectable.cs" />
     <Compile Include="Enemy.cs" />
     <Compile Include="Entity.cs" />
+    <Compile Include="ExperienceCollectable.cs" />
     <Compile Include="GameField.cs" />
     <Compile Include="GameObject.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Gate.cs" />
+    <Compile Include="GunCollectable.cs" />
     <Compile Include="HealthCollectable.cs" />
     <Compile Include="NPC.cs" />
     <Compile Include="Player.cs" />
