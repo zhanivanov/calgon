@@ -29,5 +29,44 @@ namespace calgon
         }
 
         public abstract Collectable[] GenerateCollectables(int count);
+
+        public static bool CheckSymbolCollision(Entity entity, string direction)
+        {
+            int matrixPosX;
+            int matrixPosY;
+            try
+            {
+                matrixPosX = entity.CollisionCheck(entity.PosX, entity.PosY, entity.SizeX, entity.SizeY, direction)[0];
+                matrixPosY = entity.CollisionCheck(entity.PosX, entity.PosY, entity.SizeX, entity.SizeY, direction)[1];
+            }
+            catch(Exception e)
+            {
+                return false;
+            }
+            switch (GameField.matrix[matrixPosX, matrixPosY])
+            {
+                case "@":
+                    Player.Health += HealthCollectable.bonusHealth;
+                    break;
+                case "$":
+                    Player.Exp += ExperienceCollectable.bonusExp;
+                    break;
+                case "#":
+                    // gun implementation
+                    break;
+                case "*":
+                    Player.Points += BonusCollectable.bonusPoints;
+                    break;
+                default:
+                    return false;
+                    break;
+            }
+            GameField.matrix[matrixPosX, matrixPosY] = " ";
+            Utilities.PrintStringOnPositon(matrixPosY, matrixPosX, " ");
+
+            SideInfo.PrintInfo();
+
+            return true;
+        }
     }
 }

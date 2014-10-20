@@ -35,50 +35,90 @@ namespace calgon
 
                 if (pressedKey.Key == ConsoleKey.LeftArrow)
                 {
-                    if (!CollisionCheck(this.PosX, this.PosY, this.SizeX, this.SizeY, "left"))
+                    string direction = "left";
+                    if (CollisionCheck(this.PosX, this.PosY, this.SizeX, this.SizeY, direction).Length == 0)
                     {
                         this.PosX -= 1;
                         ClearTrace();
                     }
                     else
                     {
-                        Utilities.PrintStringOnPositon(143, 2, "<", ConsoleColor.Red);
+                        if (Collectable.CheckSymbolCollision(this, direction))
+                        {
+                            Collectable.CheckSymbolCollision(this, direction);
+                            this.PosX -= 1;
+                            ClearTrace();
+                        }
+                        else
+                        {
+                            Utilities.PrintStringOnPositon(143, 2, "<", ConsoleColor.Red);
+                        }
                     }
                 }
                 else if (pressedKey.Key == ConsoleKey.RightArrow)
                 {
-                    if (!CollisionCheck(this.PosX, this.PosY, this.SizeX, this.SizeY, "right"))
+                    string direction = "right";
+                    if (CollisionCheck(this.PosX, this.PosY, this.SizeX, this.SizeY, direction).Length == 0)
                     {
                         this.PosX += 1;
                         ClearTrace();
                     }
                     else
                     {
-                        Utilities.PrintStringOnPositon(145, 2, ">", ConsoleColor.Red);
+                        if (Collectable.CheckSymbolCollision(this, direction))
+                        {
+                            Collectable.CheckSymbolCollision(this, direction);
+                            this.PosX += 1;
+                            ClearTrace();
+                        }
+                        else
+                        {
+                            Utilities.PrintStringOnPositon(143, 2, "<", ConsoleColor.Red);
+                        }
                     }
                 }
                 else if (pressedKey.Key == ConsoleKey.UpArrow)
                 {
-                    if (!CollisionCheck(this.PosX, this.PosY, this.SizeX, this.SizeY, "up"))
+                    string direction = "up";
+                    if (CollisionCheck(this.PosX, this.PosY, this.SizeX, this.SizeY, direction).Length == 0)
                     {
                         this.PosY -= 1;
                         ClearTrace();
                     }
                     else
                     {
-                        Utilities.PrintStringOnPositon(144, 1, "^", ConsoleColor.Red);
+                        if (Collectable.CheckSymbolCollision(this, direction))
+                        {
+                            Collectable.CheckSymbolCollision(this, direction);
+                            this.PosY -= 1;
+                            ClearTrace();
+                        }
+                        else
+                        {
+                            Utilities.PrintStringOnPositon(143, 2, "<", ConsoleColor.Red);
+                        }
                     }
                 }
                 else if (pressedKey.Key == ConsoleKey.DownArrow)
                 {
-                    if (!CollisionCheck(this.PosX, this.PosY, this.SizeX, this.SizeY, "down"))
+                    string direction = "down";
+                    if (CollisionCheck(this.PosX, this.PosY, this.SizeX, this.SizeY, direction).Length == 0)
                     {
                         this.PosY += 1;
                         ClearTrace();
                     }
                     else
                     {
-                        Utilities.PrintStringOnPositon(144, 3, "v", ConsoleColor.Red);
+                        if (Collectable.CheckSymbolCollision(this, direction))
+                        {
+                            Collectable.CheckSymbolCollision(this, direction);
+                            this.PosY += 1;
+                            ClearTrace();
+                        }
+                        else
+                        {
+                            Utilities.PrintStringOnPositon(143, 2, "<", ConsoleColor.Red);
+                        }
                     }
                 }
                 DrawPlayer();
