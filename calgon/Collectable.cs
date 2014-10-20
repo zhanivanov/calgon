@@ -59,7 +59,6 @@ namespace calgon
                     break;
                 default:
                     return false;
-                    break;
             }
             GameField.matrix[matrixPosX, matrixPosY] = " ";
             Utilities.PrintStringOnPositon(matrixPosY, matrixPosX, " ");

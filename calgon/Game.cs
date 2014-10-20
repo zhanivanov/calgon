@@ -55,12 +55,21 @@ namespace calgon
             int q = 10;
             while (true)
             {
+<<<<<<< HEAD
                 //q += 1;
                 //if (q % 1000 == 0)
                 //{
                 //    test.EntityMove();
                 //    testt.EntityMove();
                 //}
+=======
+                q += 1;
+                if (q % 1000 == 0)
+                {
+                    //test.EntityMove();
+                    //testt.EntityMove();
+                }
+>>>>>>> 63798f8f4ac0bee0215ec6f173a48b12be2c6591
                 tempPlayer.MovePlayer();
                 //tempPlayer.DrawPlayer();
             }
