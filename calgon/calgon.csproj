@@ -43,7 +43,7 @@
   <ItemGroup>
     <Compile Include="BonusCollectable.cs" />
     <Compile Include="Collectable.cs" />
-    <Compile Include="DragonEntity.cs" />
+    <Compile Include="DragonEnemy.cs" />
     <Compile Include="Enemy.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="ExperienceCollectable.cs" />
@@ -53,7 +53,7 @@
     <Compile Include="Gate.cs" />
     <Compile Include="GunCollectable.cs" />
     <Compile Include="HealthCollectable.cs" />
-    <Compile Include="IMoveble_2.cs" />
+    <Compile Include="IMoveble.cs" />
     <Compile Include="NPC.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
