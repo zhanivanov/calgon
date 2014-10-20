@@ -12,7 +12,7 @@ namespace calgon
         public static void Main()
         {  
             int bufferHeight = 40;
-            int bufferWidth = 180;
+            int bufferWidth = 170;
             // Setting the parameters of the Console
             Console.BufferHeight = bufferHeight;
             Console.BufferWidth = bufferWidth;
