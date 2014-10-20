@@ -50,8 +50,11 @@ namespace calgon
                 }
             }
             SideInfo.PrintInfo();
+            DragonEnemy test = new DragonEnemy(0, 1, 1, 5, 14, 1, 1);
+            
             while (true)
-            {
+            {  
+                test.EntityMove();
                 tempPlayer.MovePlayer();
                 //tempPlayer.DrawPlayer();
             }
