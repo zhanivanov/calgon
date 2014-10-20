@@ -17,16 +17,15 @@ namespace calgon
 
         public override Collectable[] GenerateCollectables(int count)
         {
-            Random randomXGenerator = new Random();
-            Random randomYGenerator = new Random();
+            Random randomCoordinatesGenerator = new Random();
             int nextX = 0;
             int nextY = 0;
 
             Collectable[] collectables = new HealthCollectable[count];
             for (int i = 0; i < count; i++)
             {
-                nextX = randomXGenerator.Next(1, 150);
-                nextY = randomYGenerator.Next(1, 35);
+                nextX = randomCoordinatesGenerator.Next(1, 140);
+                nextY = randomCoordinatesGenerator.Next(1, 35);
                 collectables[i] = new HealthCollectable(nextX, nextY);
             }
 

@@ -36,9 +36,9 @@ namespace calgon
             gate.DrawGate();
 
             Collectable[] healthCollectables = new HealthCollectable(0, 0).GenerateCollectables(5);
-            Collectable[] experienceCollectables = new ExperienceCollectable(0, 0).GenerateCollectables(2);
-            Collectable[] gunCollectables = new GunCollectable(0, 0).GenerateCollectables(4);
-            Collectable[] bonusCollectables = new BonusCollectable(0, 0).GenerateCollectables(10);
+            Collectable[] experienceCollectables = new ExperienceCollectable(0, 0).GenerateCollectables(5);
+            Collectable[] gunCollectables = new GunCollectable(0, 0).GenerateCollectables(5);
+            Collectable[] bonusCollectables = new BonusCollectable(0, 0).GenerateCollectables(5);
 
             Collectable[][] allCollectables = { healthCollectables, experienceCollectables, gunCollectables, bonusCollectables };
 
@@ -50,17 +50,17 @@ namespace calgon
                 }
             }
             SideInfo.PrintInfo();
-            DragonEnemy test = new DragonEnemy(0, 1, 1, 5,1, 1, 1);
-            DragonEnemy testt = new DragonEnemy(0, 1, 1, 12, 34, 1, 1);
+            //DragonEnemy test = new DragonEnemy(0, 1, 1, 5,1, 1, 1);
+            //DragonEnemy testt = new DragonEnemy(0, 1, 1, 12, 34, 1, 1);
             int q = 10;
             while (true)
             {
-                q += 1;
-                if (q % 1000 == 0)
-                {
-                    test.EntityMove();
-                    testt.EntityMove();
-                }
+                //q += 1;
+                //if (q % 1000 == 0)
+                //{
+                //    test.EntityMove();
+                //    testt.EntityMove();
+                //}
                 tempPlayer.MovePlayer();
                 //tempPlayer.DrawPlayer();
             }

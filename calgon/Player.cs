@@ -73,7 +73,7 @@ namespace calgon
                         }
                         else
                         {
-                            Utilities.PrintStringOnPositon(143, 2, "<", ConsoleColor.Red);
+                            Utilities.PrintStringOnPositon(145, 2, ">", ConsoleColor.Red);
                         }
                     }
                 }
@@ -95,7 +95,7 @@ namespace calgon
                         }
                         else
                         {
-                            Utilities.PrintStringOnPositon(143, 2, "<", ConsoleColor.Red);
+                            Utilities.PrintStringOnPositon(144, 1, "^", ConsoleColor.Red);
                         }
                     }
                 }
@@ -117,7 +117,7 @@ namespace calgon
                         }
                         else
                         {
-                            Utilities.PrintStringOnPositon(143, 2, "<", ConsoleColor.Red);
+                            Utilities.PrintStringOnPositon(144, 3, "v", ConsoleColor.Red);
                         }
                     }
                 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace calgon
 {
-    abstract class Enemy : NPC, IMoveble
+    abstract class Enemy : NPC
     {
         public Enemy(int exp, int level, int health, int posX, int posY, int sizeX, int sizeY)
             : base(exp, level, health, posX, posY, sizeX, sizeY)
