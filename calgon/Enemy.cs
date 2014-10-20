@@ -16,12 +16,12 @@ namespace calgon
         public abstract void EntityMove();
         public bool EntityColision(int posX, int posY)
         {
-            if (GameField.matrix[posX, posY] == " " || GameField.matrix[posX, posY] == "D")
+            if (GameField.matrix[posX, posY] == "█")
             
             {
-                return true;
+                return false;
             }
-            return false;
+            return true;
         }
     }
 }
