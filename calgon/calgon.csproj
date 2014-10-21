@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="BonusCollectable.cs" />
     <Compile Include="Collectable.cs" />
+    <Compile Include="DragonEnemy.cs" />
     <Compile Include="Enemy.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="ExperienceCollectable.cs" />

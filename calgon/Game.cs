@@ -22,6 +22,20 @@ namespace calgon
             GameField gameField = new GameField();
 
             Player tempPlayer = new Player();
+
+            List<Enemy> dragons = new List<Enemy>() 
+            {
+                new DragonEnemy(),
+                new DragonEnemy(),
+                new DragonEnemy(),
+                new DragonEnemy(),
+                new DragonEnemy(),
+                new DragonEnemy(),
+                new DragonEnemy(),
+                new DragonEnemy(),
+                new DragonEnemy()
+            };
+
             for (int col = 0; col < GameField.matrix.GetLength(0); col++)
             {
                 for (int row = 0; row < GameField.matrix.GetLength(1); row++)
@@ -54,6 +68,10 @@ namespace calgon
             while (true)
             {
                 tempPlayer.MovePlayer();
+                foreach (Enemy dragon in dragons)
+                {
+                    dragon.MoveEnemy();
+                }
             }
         }
     }
