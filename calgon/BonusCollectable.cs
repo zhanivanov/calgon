@@ -24,8 +24,18 @@ namespace calgon
             Collectable[] collectables = new BonusCollectable[count];
             for (int i = 0; i < count; i++)
             {
-                nextX = randomCoordinatesGenerator.Next(1, 150);
+                nextX = randomCoordinatesGenerator.Next(1, 140);
                 nextY = randomCoordinatesGenerator.Next(1, 35);
+                if (GameField.matrix[nextY, nextX].Equals("█"))
+                {
+                    bool isEqual;
+                    do
+                    {
+                        nextX = randomCoordinatesGenerator.Next(1, 140);
+                        nextY = randomCoordinatesGenerator.Next(1, 35);
+                        isEqual = GameField.matrix[nextY, nextX].Equals("█");
+                    } while (isEqual);
+                }
                 collectables[i] = new BonusCollectable(nextX, nextY);
             }
 

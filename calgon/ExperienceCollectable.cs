@@ -26,6 +26,16 @@ namespace calgon
             {
                 nextX = randomCoordinatesGenerator.Next(1, 140);
                 nextY = randomCoordinatesGenerator.Next(1, 35);
+                if (GameField.matrix[nextY, nextX].Equals("█"))
+                {
+                    bool isEqual;
+                    do
+                    {
+                        nextX = randomCoordinatesGenerator.Next(1, 140);
+                        nextY = randomCoordinatesGenerator.Next(1, 35);
+                        isEqual = GameField.matrix[nextY, nextX].Equals("█");
+                    } while (isEqual);
+                }
                 collectables[i] = new ExperienceCollectable(nextX, nextY);
             }
 
