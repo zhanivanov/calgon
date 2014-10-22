@@ -27,7 +27,7 @@ namespace calgon
         public void DrawEnemy(ConsoleColor enemyColor)
         {
             Utilities.PrintStringOnPositon(this.PosX, this.PosY, this.EnemySymbol, ConsoleColor.White);
-            GameField.matrix[PosY, PosX] = "█";
+            GameField.matrix[PosY, PosX] = "D";
 
         }
 
@@ -120,7 +120,7 @@ namespace calgon
         {
             Console.SetCursorPosition(currPos.PosX, currPos.PosY);
             Console.Write(" ");
-            GameField.matrix[PosY, PosX] = " ";
+            GameField.matrix[currPos.PosY, currPos.PosX] = " ";
             this.currPos.PosX = this.PosX;
             this.currPos.PosY = this.PosY;
         }

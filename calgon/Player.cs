@@ -13,7 +13,7 @@ namespace calgon
         private GameObject currPos = new GameObject(1, 1);
 
         public Player()
-            : base(0, 0, 0, 0, 1, 1, 3, 3, ConsoleColor.Green)
+            : base(0, 0, 0, 0,1, 1, 3, 3, ConsoleColor.Green)
         {
             playerSymbol[0, 0] = " ";
             playerSymbol[0, 1] = "/";
@@ -26,6 +26,7 @@ namespace calgon
             playerSymbol[2, 2] = "\\";
         }
 
+        
         public void MovePlayer()
         {
             if (Console.KeyAvailable)
@@ -158,6 +159,39 @@ namespace calgon
             }
         }
 
+        public void ChekForEnemy()
+        {
+            if (GameField.matrix[this.PosY - 1, this.PosX - 1] == "D" ||
+                GameField.matrix[this.PosY, this.PosX - 1] == "D" ||
+                GameField.matrix[this.PosY + 1, this.PosX - 1] == "D" ||
+                GameField.matrix[this.PosY + 2, this.PosX - 1] == "D" ||
+                GameField.matrix[this.PosY + 3, this.PosX - 1] == "D" ||
+                GameField.matrix[this.PosY - 1, this.PosX] == "D" ||
+                GameField.matrix[this.PosY, this.PosX] == "D" ||
+                GameField.matrix[this.PosY + 1, this.PosX] == "D" ||
+                GameField.matrix[this.PosY + 2, this.PosX] == "D" ||
+                GameField.matrix[this.PosY + 3, this.PosX] == "D" ||
+                GameField.matrix[this.PosY - 1, this.PosX + 1] == "D" ||
+                GameField.matrix[this.PosY, this.PosX + 1] == "D" ||
+                GameField.matrix[this.PosY + 1, this.PosX + 1] == "D" ||
+                GameField.matrix[this.PosY + 2, this.PosX + 1] == "D" ||
+                GameField.matrix[this.PosY + 3, this.PosX + 1] == "D" ||
+                GameField.matrix[this.PosY - 1, this.PosX + 2] == "D" ||
+                GameField.matrix[this.PosY, this.PosX + 2] == "D" ||
+                GameField.matrix[this.PosY + 1, this.PosX + 2] == "D" ||
+                GameField.matrix[this.PosY + 2, this.PosX + 2] == "D" ||
+                GameField.matrix[this.PosY + 3, this.PosX + 2] == "D" ||
+                GameField.matrix[this.PosY - 1, this.PosX + 3] == "D" ||
+                GameField.matrix[this.PosY, this.PosX + 3] == "D" ||
+                GameField.matrix[this.PosY + 1, this.PosX + 3] == "D" ||
+                GameField.matrix[this.PosY + 2, this.PosX + 3] == "D" ||
+                GameField.matrix[this.PosY + 3, this.PosX + 3] == "D")
+            {
+                Player.Health -= 1;
+                SideInfo.PrintInfo();
+            }
+
+        }
         private void ClearTrace()
         {
             Console.SetCursorPosition(currPos.PosX, currPos.PosY);
