@@ -26,6 +26,7 @@ namespace calgon
 
         public void DrawEnemy(ConsoleColor enemyColor)
         {
+            GameField.matrix[this.PosY, this.PosX] = this.EnemySymbol;
             Utilities.PrintStringOnPositon(this.PosX, this.PosY, this.EnemySymbol, ConsoleColor.White);
         }
 
@@ -42,22 +43,22 @@ namespace calgon
 
         private bool checkWallCollision(int direction, Random directionGenerator)
         {
-            if (direction == 1 && !GameField.matrix[this.PosY, this.PosX + 1].Equals("█"))
+            if (direction == 1 && !GameField.matrix[this.PosY, this.PosX + 1].Equals("█") && !GameField.matrix[this.PosY, this.PosX + 1].Equals("R"))
             {
                 internalMove(direction);
                 return false;
             }
-            else if (direction == 2 && !GameField.matrix[this.PosY, this.PosX - 1].Equals("█"))
+            else if (direction == 2 && !GameField.matrix[this.PosY, this.PosX - 1].Equals("█") && !GameField.matrix[this.PosY, this.PosX - 1].Equals("R"))
             {
                 internalMove(direction);
                 return false;
             }
-            else if (direction == 3 && !GameField.matrix[this.PosY + 1, this.PosX].Equals("█"))
+            else if (direction == 3 && !GameField.matrix[this.PosY + 1, this.PosX].Equals("█") && !GameField.matrix[this.PosY + 1, this.PosX].Equals("R"))
             {
                 internalMove(direction);
                 return false;
             }
-            else if (direction == 4 && !GameField.matrix[this.PosY - 1, this.PosX].Equals("█"))
+            else if (direction == 4 && !GameField.matrix[this.PosY - 1, this.PosX].Equals("█") && !GameField.matrix[this.PosY - 1, this.PosX].Equals("R"))
             {
                 internalMove(direction);
                 return false;
@@ -92,32 +93,11 @@ namespace calgon
             this.ClearTrace();
         }
 
-        private bool checkForWall()
-        {
-            if(GameField.matrix[this.PosY, this.PosX + 1].Equals("█"))
-            {
-                return true;
-            }
-            else if (GameField.matrix[this.PosY, this.PosX - 1].Equals("█"))
-            {
-                return true;
-            }
-            else if (GameField.matrix[this.PosY + 1, this.PosX].Equals("█"))
-            {
-                return true;
-            }
-            else if (GameField.matrix[this.PosY - 1, this.PosX].Equals("█"))
-            {
-                return true;
-            }
-
-            return false;
-        }
-
         private void ClearTrace()
         {
             Console.SetCursorPosition(currPos.PosX, currPos.PosY);
             Console.Write(" ");
+            GameField.matrix[currPos.PosY, currPos.PosX] = " ";
             this.currPos.PosX = this.PosX;
             this.currPos.PosY = this.PosY;
         }
