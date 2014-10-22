@@ -39,6 +39,7 @@ namespace calgon
             if (checkBombCollision(this.Direction, directionGenerator))
             {
                 this.EnemySymbol = " ";
+                Bomb.setBomb = false;
             }
             
             while (DateTime.Now < currTime)

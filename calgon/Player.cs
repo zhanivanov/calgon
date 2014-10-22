@@ -36,7 +36,7 @@ namespace calgon
                 {
                    Bomb curBomb= new Bomb(this.PosY+2,this.PosX+3);
                    curBomb.DrawBomb();
-                   
+                   Bomb.setBomb = true;
                 }
             }
         }
