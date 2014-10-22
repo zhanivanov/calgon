@@ -8,8 +8,8 @@ namespace calgon
 {
     class Player : Entity
     {
-        private string[,] playerSymbol = new string[3,3];
-        
+        private string[,] playerSymbol = new string[3, 3];
+
         private GameObject currPos = new GameObject(1, 1);
 
         public Player()
@@ -137,16 +137,19 @@ namespace calgon
                     if ((j == 2 && i == 2) && ((this.PosX % 2 == 0) ^ (this.PosY % 2 == 0)))
                     {
                         Console.Write(" ");
+                        GameField.matrix[this.PosY + i, this.PosX + j] = "p";
                     }
                     else
                     {
                         if ((j == 1 && i == 2) && ((this.PosX % 2 == 0) ^ (this.PosY % 2 == 0)))
                         {
                             Console.Write("/");
+                            GameField.matrix[this.PosY + i, this.PosX + j] = "p";
                         }
                         else
                         {
                             Console.Write(this.playerSymbol[j, i]);
+                            GameField.matrix[this.PosY + i, this.PosX + j] = "p";
                         }
                     }
                 }
@@ -158,10 +161,19 @@ namespace calgon
         private void ClearTrace()
         {
             Console.SetCursorPosition(currPos.PosX, currPos.PosY);
+            GameField.matrix[currPos.PosY, currPos.PosX] = " ";
+            GameField.matrix[currPos.PosY, currPos.PosX + 1] = " ";
+            GameField.matrix[currPos.PosY, currPos.PosX + 2] = " ";
             Console.Write("   ");
             Console.SetCursorPosition(currPos.PosX, currPos.PosY + 1);
+            GameField.matrix[currPos.PosY + 1, currPos.PosX] = " ";
+            GameField.matrix[currPos.PosY + 1, currPos.PosX + 1] = " ";
+            GameField.matrix[currPos.PosY + 1, currPos.PosX + 2] = " ";
             Console.Write("   ");
             Console.SetCursorPosition(currPos.PosX, currPos.PosY + 2);
+            GameField.matrix[currPos.PosY + 2, currPos.PosX] = " ";
+            GameField.matrix[currPos.PosY + 2, currPos.PosX + 1] = " ";
+            GameField.matrix[currPos.PosY + 2, currPos.PosX + 2] = " ";
             Console.Write("   ");
             this.currPos.PosX = this.PosX;
             this.currPos.PosY = this.PosY;

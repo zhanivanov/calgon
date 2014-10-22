@@ -27,6 +27,8 @@ namespace calgon
         public void DrawEnemy(ConsoleColor enemyColor)
         {
             Utilities.PrintStringOnPositon(this.PosX, this.PosY, this.EnemySymbol, ConsoleColor.White);
+            GameField.matrix[PosY, PosX] = "█";
+
         }
 
         public void MoveEnemy()
@@ -42,22 +44,22 @@ namespace calgon
 
         private bool checkWallCollision(int direction, Random directionGenerator)
         {
-            if (direction == 1 && !GameField.matrix[this.PosY, this.PosX + 1].Equals("█"))
+            if (direction == 1 && GameField.matrix[this.PosY, this.PosX + 1].Equals(" "))
             {
                 internalMove(direction);
                 return false;
             }
-            else if (direction == 2 && !GameField.matrix[this.PosY, this.PosX - 1].Equals("█"))
+            else if (direction == 2 && GameField.matrix[this.PosY, this.PosX - 1].Equals(" "))
             {
                 internalMove(direction);
                 return false;
             }
-            else if (direction == 3 && !GameField.matrix[this.PosY + 1, this.PosX].Equals("█"))
+            else if (direction == 3 && GameField.matrix[this.PosY + 1, this.PosX].Equals(" "))
             {
                 internalMove(direction);
                 return false;
             }
-            else if (direction == 4 && !GameField.matrix[this.PosY - 1, this.PosX].Equals("█"))
+            else if (direction == 4 && GameField.matrix[this.PosY - 1, this.PosX].Equals(" "))
             {
                 internalMove(direction);
                 return false;
@@ -94,7 +96,7 @@ namespace calgon
 
         private bool checkForWall()
         {
-            if(GameField.matrix[this.PosY, this.PosX + 1].Equals("█"))
+            if (GameField.matrix[this.PosY, this.PosX + 1].Equals("█"))
             {
                 return true;
             }
@@ -118,6 +120,7 @@ namespace calgon
         {
             Console.SetCursorPosition(currPos.PosX, currPos.PosY);
             Console.Write(" ");
+            GameField.matrix[PosY, PosX] = " ";
             this.currPos.PosX = this.PosX;
             this.currPos.PosY = this.PosY;
         }
