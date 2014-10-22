@@ -94,28 +94,6 @@ namespace calgon
             this.ClearTrace();
         }
 
-        private bool checkForWall()
-        {
-            if (GameField.matrix[this.PosY, this.PosX + 1].Equals("█"))
-            {
-                return true;
-            }
-            else if (GameField.matrix[this.PosY, this.PosX - 1].Equals("█"))
-            {
-                return true;
-            }
-            else if (GameField.matrix[this.PosY + 1, this.PosX].Equals("█"))
-            {
-                return true;
-            }
-            else if (GameField.matrix[this.PosY - 1, this.PosX].Equals("█"))
-            {
-                return true;
-            }
-
-            return false;
-        }
-
         private void ClearTrace()
         {
             Console.SetCursorPosition(currPos.PosX, currPos.PosY);

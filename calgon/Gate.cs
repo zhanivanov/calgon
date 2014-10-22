@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace calgon
 {
-    class Gate
+    class Gate 
     {
         private int x;
         private int y;
