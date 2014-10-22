@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bomb.cs" />
     <Compile Include="BonusCollectable.cs" />
     <Compile Include="Collectable.cs" />
     <Compile Include="DragonEnemy.cs" />

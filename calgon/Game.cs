@@ -67,6 +67,7 @@ namespace calgon
 
             while (true)
             {
+                tempPlayer.SetBomb();
                 tempPlayer.MovePlayer();
                 foreach (Enemy dragon in dragons)
                 {

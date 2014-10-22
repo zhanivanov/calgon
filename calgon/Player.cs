@@ -27,7 +27,19 @@ namespace calgon
             playerSymbol[2, 2] = "\\";
         }
 
-        
+        public void SetBomb()
+        {
+            if (Console.KeyAvailable)
+            {
+                ConsoleKeyInfo pressedKey = Console.ReadKey(true);
+                if (pressedKey.Key == ConsoleKey.Enter)
+                {
+                   Bomb curBomb= new Bomb(this.PosY+2,this.PosX+3);
+                   curBomb.DrawBomb();
+                   
+                }
+            }
+        }
         public void MovePlayer()
         {
             if (Console.KeyAvailable)
