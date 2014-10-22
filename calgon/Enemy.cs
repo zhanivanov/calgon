@@ -36,6 +36,11 @@ namespace calgon
             DateTime currTime = DateTime.Now.AddSeconds(0.007);
             Random directionGenerator = new Random();
             checkWallCollision(this.Direction, directionGenerator);
+            if (checkBombCollision(this.Direction, directionGenerator))
+            {
+                this.EnemySymbol = " ";
+            }
+            
             while (DateTime.Now < currTime)
             {
                 
@@ -68,6 +73,33 @@ namespace calgon
             {
                 this.Direction = directionGenerator.Next(1, 5);
                 return true;
+            }
+        }
+        private bool checkBombCollision(int direction, Random directionGenerator)
+        {
+            if (direction == 1 && GameField.matrix[this.PosY, this.PosX + 1].Equals("!"))
+            {
+                internalMove(direction);
+                return true;
+            }
+            else if (direction == 2 && GameField.matrix[this.PosY, this.PosX - 1].Equals("!"))
+            {
+                internalMove(direction);
+                return true;
+            }
+            else if (direction == 3 && GameField.matrix[this.PosY + 1, this.PosX].Equals("!"))
+            {
+                internalMove(direction);
+                return true;
+            }
+            else if (direction == 4 && GameField.matrix[this.PosY - 1, this.PosX].Equals("!"))
+            {
+                internalMove(direction);
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
 
