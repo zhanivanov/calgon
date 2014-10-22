@@ -51,7 +51,7 @@
     <Compile Include="GameObject.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Gate.cs" />
-    <Compile Include="GunCollectable.cs" />
+    <Compile Include="BombCollectable.cs" />
     <Compile Include="HealthCollectable.cs" />
     <Compile Include="NPC.cs" />
     <Compile Include="Player.cs" />

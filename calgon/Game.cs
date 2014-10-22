@@ -51,7 +51,7 @@ namespace calgon
 
             Collectable[] healthCollectables = new HealthCollectable(0, 0).GenerateCollectables(5);
             Collectable[] experienceCollectables = new ExperienceCollectable(0, 0).GenerateCollectables(5);
-            Collectable[] gunCollectables = new GunCollectable(0, 0).GenerateCollectables(5);
+            Collectable[] gunCollectables = new BombCollectable(0, 0).GenerateCollectables(5);
             Collectable[] bonusCollectables = new BonusCollectable(0, 0).GenerateCollectables(5);
 
             Collectable[][] allCollectables = { healthCollectables, experienceCollectables, gunCollectables, bonusCollectables };
