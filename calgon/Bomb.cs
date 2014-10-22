@@ -7,6 +7,7 @@ namespace calgon
 {
     class Bomb : GameObject
     {
+        public static bool setBomb = false;
         public Bomb( int posY,int posX)
             : base(posX, posY)
         {
@@ -14,9 +15,10 @@ namespace calgon
         }
         public void DrawBomb()
         {
-            Console.SetCursorPosition(this.PosX + 3, this.PosY + 2);
+            Console.SetCursorPosition(this.PosX , this.PosY );
             Console.Write("!");
-            GameField.matrix[this.PosY + 2, this.PosX + 3] = "!";
+            GameField.matrix[this.PosY , this.PosX ] = "!";
         }
+      //  public static DeleteBoomb()
     }
 }
