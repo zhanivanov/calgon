@@ -71,6 +71,7 @@ namespace calgon
                 foreach (Enemy dragon in dragons)
                 {
                     dragon.MoveEnemy();
+                    tempPlayer.ChekForEnemy();
                 }
             }
         }

@@ -8,12 +8,12 @@ namespace calgon
 {
     class Player : Entity
     {
-        private string[,] playerSymbol = new string[3,3];
-        
+        private string[,] playerSymbol = new string[3, 3];
+
         private GameObject currPos = new GameObject(1, 1);
 
         public Player()
-            : base(0, 0, 0, 0, 1, 1, 3, 3, ConsoleColor.Green)
+            : base(0, 0, 0, 0,1, 1, 3, 3, ConsoleColor.Green)
         {
             playerSymbol[0, 0] = " ";
             playerSymbol[0, 1] = "/";
@@ -26,6 +26,7 @@ namespace calgon
             playerSymbol[2, 2] = "\\";
         }
 
+        
         public void MovePlayer()
         {
             if (Console.KeyAvailable)
@@ -137,16 +138,19 @@ namespace calgon
                     if ((j == 2 && i == 2) && ((this.PosX % 2 == 0) ^ (this.PosY % 2 == 0)))
                     {
                         Console.Write(" ");
+                        GameField.matrix[this.PosY + i, this.PosX + j] = "p";
                     }
                     else
                     {
                         if ((j == 1 && i == 2) && ((this.PosX % 2 == 0) ^ (this.PosY % 2 == 0)))
                         {
                             Console.Write("/");
+                            GameField.matrix[this.PosY + i, this.PosX + j] = "p";
                         }
                         else
                         {
                             Console.Write(this.playerSymbol[j, i]);
+                            GameField.matrix[this.PosY + i, this.PosX + j] = "p";
                         }
                     }
                 }
@@ -155,13 +159,55 @@ namespace calgon
             }
         }
 
+        public void ChekForEnemy()
+        {
+            if (GameField.matrix[this.PosY - 1, this.PosX - 1] == "D" ||
+                GameField.matrix[this.PosY, this.PosX - 1] == "D" ||
+                GameField.matrix[this.PosY + 1, this.PosX - 1] == "D" ||
+                GameField.matrix[this.PosY + 2, this.PosX - 1] == "D" ||
+                GameField.matrix[this.PosY + 3, this.PosX - 1] == "D" ||
+                GameField.matrix[this.PosY - 1, this.PosX] == "D" ||
+                GameField.matrix[this.PosY, this.PosX] == "D" ||
+                GameField.matrix[this.PosY + 1, this.PosX] == "D" ||
+                GameField.matrix[this.PosY + 2, this.PosX] == "D" ||
+                GameField.matrix[this.PosY + 3, this.PosX] == "D" ||
+                GameField.matrix[this.PosY - 1, this.PosX + 1] == "D" ||
+                GameField.matrix[this.PosY, this.PosX + 1] == "D" ||
+                GameField.matrix[this.PosY + 1, this.PosX + 1] == "D" ||
+                GameField.matrix[this.PosY + 2, this.PosX + 1] == "D" ||
+                GameField.matrix[this.PosY + 3, this.PosX + 1] == "D" ||
+                GameField.matrix[this.PosY - 1, this.PosX + 2] == "D" ||
+                GameField.matrix[this.PosY, this.PosX + 2] == "D" ||
+                GameField.matrix[this.PosY + 1, this.PosX + 2] == "D" ||
+                GameField.matrix[this.PosY + 2, this.PosX + 2] == "D" ||
+                GameField.matrix[this.PosY + 3, this.PosX + 2] == "D" ||
+                GameField.matrix[this.PosY - 1, this.PosX + 3] == "D" ||
+                GameField.matrix[this.PosY, this.PosX + 3] == "D" ||
+                GameField.matrix[this.PosY + 1, this.PosX + 3] == "D" ||
+                GameField.matrix[this.PosY + 2, this.PosX + 3] == "D" ||
+                GameField.matrix[this.PosY + 3, this.PosX + 3] == "D")
+            {
+                Player.Health -= 1;
+                SideInfo.PrintInfo();
+            }
+
+        }
         private void ClearTrace()
         {
             Console.SetCursorPosition(currPos.PosX, currPos.PosY);
+            GameField.matrix[currPos.PosY, currPos.PosX] = " ";
+            GameField.matrix[currPos.PosY, currPos.PosX + 1] = " ";
+            GameField.matrix[currPos.PosY, currPos.PosX + 2] = " ";
             Console.Write("   ");
             Console.SetCursorPosition(currPos.PosX, currPos.PosY + 1);
+            GameField.matrix[currPos.PosY + 1, currPos.PosX] = " ";
+            GameField.matrix[currPos.PosY + 1, currPos.PosX + 1] = " ";
+            GameField.matrix[currPos.PosY + 1, currPos.PosX + 2] = " ";
             Console.Write("   ");
             Console.SetCursorPosition(currPos.PosX, currPos.PosY + 2);
+            GameField.matrix[currPos.PosY + 2, currPos.PosX] = " ";
+            GameField.matrix[currPos.PosY + 2, currPos.PosX + 1] = " ";
+            GameField.matrix[currPos.PosY + 2, currPos.PosX + 2] = " ";
             Console.Write("   ");
             this.currPos.PosX = this.PosX;
             this.currPos.PosY = this.PosY;

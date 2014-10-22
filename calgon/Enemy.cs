@@ -26,8 +26,9 @@ namespace calgon
 
         public void DrawEnemy(ConsoleColor enemyColor)
         {
-            GameField.matrix[this.PosY, this.PosX] = this.EnemySymbol;
             Utilities.PrintStringOnPositon(this.PosX, this.PosY, this.EnemySymbol, ConsoleColor.White);
+            GameField.matrix[PosY, PosX] = "D";
+
         }
 
         public void MoveEnemy()
@@ -43,22 +44,22 @@ namespace calgon
 
         private bool checkWallCollision(int direction, Random directionGenerator)
         {
-            if (direction == 1 && !GameField.matrix[this.PosY, this.PosX + 1].Equals("█") && !GameField.matrix[this.PosY, this.PosX + 1].Equals("R"))
+            if (direction == 1 && GameField.matrix[this.PosY, this.PosX + 1].Equals(" "))
             {
                 internalMove(direction);
                 return false;
             }
-            else if (direction == 2 && !GameField.matrix[this.PosY, this.PosX - 1].Equals("█") && !GameField.matrix[this.PosY, this.PosX - 1].Equals("R"))
+            else if (direction == 2 && GameField.matrix[this.PosY, this.PosX - 1].Equals(" "))
             {
                 internalMove(direction);
                 return false;
             }
-            else if (direction == 3 && !GameField.matrix[this.PosY + 1, this.PosX].Equals("█") && !GameField.matrix[this.PosY + 1, this.PosX].Equals("R"))
+            else if (direction == 3 && GameField.matrix[this.PosY + 1, this.PosX].Equals(" "))
             {
                 internalMove(direction);
                 return false;
             }
-            else if (direction == 4 && !GameField.matrix[this.PosY - 1, this.PosX].Equals("█") && !GameField.matrix[this.PosY - 1, this.PosX].Equals("R"))
+            else if (direction == 4 && GameField.matrix[this.PosY - 1, this.PosX].Equals(" "))
             {
                 internalMove(direction);
                 return false;
@@ -91,6 +92,28 @@ namespace calgon
             }
             this.DrawEnemy(ConsoleColor.White);
             this.ClearTrace();
+        }
+
+        private bool checkForWall()
+        {
+            if (GameField.matrix[this.PosY, this.PosX + 1].Equals("█"))
+            {
+                return true;
+            }
+            else if (GameField.matrix[this.PosY, this.PosX - 1].Equals("█"))
+            {
+                return true;
+            }
+            else if (GameField.matrix[this.PosY + 1, this.PosX].Equals("█"))
+            {
+                return true;
+            }
+            else if (GameField.matrix[this.PosY - 1, this.PosX].Equals("█"))
+            {
+                return true;
+            }
+
+            return false;
         }
 
         private void ClearTrace()
