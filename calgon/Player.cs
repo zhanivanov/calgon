@@ -11,6 +11,7 @@ namespace calgon
         private string[,] playerSymbol = new string[3, 3];
 
         private GameObject currPos = new GameObject(1, 1);
+        public static int bombs = 0;
 
         public Player()
             : base(0, 0, 0, 0,1, 1, 3, 3, ConsoleColor.Green)

@@ -8,7 +8,7 @@ namespace calgon
 {
     abstract class Collectable : GameObject
     {
-        public static string[] collectableSymbolsArr = { "@", "$", "#", "*" };
+        public static string[] collectableSymbolsArr = { "@", "$", "B","*" };
         private string collectableSymbol;
         private ConsoleColor color;
 
@@ -51,8 +51,8 @@ namespace calgon
                 case "$":
                     Player.Exp += ExperienceCollectable.bonusExp;
                     break;
-                case "#":
-                    // gun implementation
+                case "B":
+                    Player.bombs += BombCollectable.bombs;
                     break;
                 case "*":
                     Player.Points += BonusCollectable.bonusPoints;
