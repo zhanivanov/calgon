@@ -19,10 +19,10 @@ namespace calgon
             this.Color = color;
         }
 
-        public string CollectableSymbol { get; set; }
+        public string CollectableSymbol { get { return this.collectableSymbol; } set { this.collectableSymbol = value; } }
 
-        public ConsoleColor Color { get; set; }
-
+        public ConsoleColor Color { get { return this.color; } set { this.color = value; } }
+            
         public void drawCollectable()
         {
             GameField.matrix[this.PosY, this.PosX] = this.CollectableSymbol;
