@@ -9,12 +9,13 @@ namespace calgon
     class Player : Entity
     {
         private string[,] playerSymbol = new string[3, 3];
+        public bool isAlive = true;
 
         private GameObject currPos = new GameObject(1, 1);
         public static int bombs = 0;
 
         public Player()
-            : base(0, 0, 0, 0,1, 1, 3, 3, ConsoleColor.Green)
+            : base(0, 0, 1000, 0, 1, 1, 3, 3, ConsoleColor.Green)
         {
             playerSymbol[0, 0] = " ";
             playerSymbol[0, 1] = "/";
@@ -27,19 +28,28 @@ namespace calgon
             playerSymbol[2, 2] = "\\";
         }
 
-        public void SetBomb()
+        //public void SetBomb()
+        //{
+        //    if (Console.KeyAvailable)
+        //    {
+        //        ConsoleKeyInfo pressedKey = Console.ReadKey(true);
+        //        while (Console.KeyAvailable) Console.ReadKey(true);
+        //        if (pressedKey.Key == ConsoleKey.Enter)
+        //        {
+        //           Bomb curBomb= new Bomb(this.PosY+2,this.PosX+3);
+        //           curBomb.DrawBomb();
+        //           Bomb.setBomb = true;
+        //        }
+        //    }
+        //}
+        public void checkIfAlive()
         {
-            if (Console.KeyAvailable)
+            if (Entity.Health <= 0)
             {
-                ConsoleKeyInfo pressedKey = Console.ReadKey(true);
-                if (pressedKey.Key == ConsoleKey.Enter)
-                {
-                   Bomb curBomb= new Bomb(this.PosY+2,this.PosX+3);
-                   curBomb.DrawBomb();
-                   Bomb.setBomb = true;
-                }
+                isAlive = false;
             }
         }
+
         public void MovePlayer()
         {
             if (Console.KeyAvailable)
@@ -135,12 +145,19 @@ namespace calgon
                         }
                     }
                 }
+                else if(pressedKey.Key == ConsoleKey.Enter)
+                {
+                    Bomb curBomb = new Bomb(this.PosY + 2, this.PosX + 3);
+                    curBomb.DrawBomb();
+                    Bomb.setBomb = true;
+                }
                 DrawPlayer();
             }
         }
 
         public void DrawPlayer()
         {
+            checkIfAlive();
             Console.SetCursorPosition(this.PosX, this.PosY);
             Console.ForegroundColor = Color;
             int countLine = 1;
@@ -203,8 +220,8 @@ namespace calgon
                 Player.Health -= 1;
                 SideInfo.PrintInfo();
             }
-
         }
+
         private void ClearTrace()
         {
             Console.SetCursorPosition(currPos.PosX, currPos.PosY);

@@ -44,7 +44,6 @@ namespace calgon
             
             while (DateTime.Now < currTime)
             {
-                
             }
         }
 

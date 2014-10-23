@@ -21,8 +21,6 @@ namespace calgon
             Console.CursorVisible = false;
             GameField gameField = new GameField();
 
-            Player tempPlayer = new Player();
-
             List<Enemy> dragons = new List<Enemy>() 
             {
                 new DragonEnemy(),
@@ -44,7 +42,6 @@ namespace calgon
                 }
                 Console.WriteLine();
             }
-            tempPlayer.DrawPlayer();
 
             Gate gate = new Gate(33, 1, "R", ConsoleColor.Red);
             gate.DrawGate();
@@ -63,11 +60,12 @@ namespace calgon
                     allCollectables[i][j].drawCollectable();
                 }
             }
+            Player tempPlayer = new Player();
+            tempPlayer.DrawPlayer();
             SideInfo.PrintInfo();
-
-            while (true)
+            while (tempPlayer.isAlive)
             {
-                tempPlayer.SetBomb();
+                //tempPlayer.SetBomb();
                 tempPlayer.MovePlayer();
                 foreach (Enemy dragon in dragons)
                 {

@@ -8,7 +8,7 @@ namespace calgon
 {
     class HealthCollectable : Collectable
     {
-        public static int bonusHealth = 10;
+        public static int bonusHealth = 150;
 
         public HealthCollectable(int posX, int posY) : base(posX, posY, "@", ConsoleColor.Blue)
         {

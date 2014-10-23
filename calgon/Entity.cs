@@ -14,7 +14,7 @@ namespace calgon
         private int points;
         private ConsoleColor color;
 
-        public Entity(int exp, int level, int health,int points, int posX = 0, int posY = 0, int sizeX = 1, int sizeY = 1, ConsoleColor color = ConsoleColor.Green)
+        public Entity(int exp, int level, int health, int points, int posX = 0, int posY = 0, int sizeX = 1, int sizeY = 1, ConsoleColor color = ConsoleColor.Green)
             : base(posX, posY, sizeX, sizeY)
         {
             Exp = exp;
