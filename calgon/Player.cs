@@ -223,7 +223,7 @@ namespace calgon
                 GameField.matrix[this.PosY + 2, this.PosX + 3] == "D" ||
                 GameField.matrix[this.PosY + 3, this.PosX + 3] == "D")
             {
-                Player.Health -= 1;
+                Player.Health -= 2;
                 SideInfo.PrintInfo();
             }
         }
