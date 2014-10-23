@@ -20,7 +20,7 @@ namespace calgon
             this.Direction = direction;
         }
 
-        public string EnemySymbol { get; set; }
+        public string EnemySymbol { get { return this.enemySymbol; } set { this.enemySymbol = value; } }
 
         public int Direction { get; set; }
 
@@ -39,6 +39,8 @@ namespace calgon
             if (checkBombCollision(this.Direction, directionGenerator))
             {
                 this.EnemySymbol = " ";
+                this.health = 0;
+                
                 Bomb.DeleteBoomb();
             }
 
