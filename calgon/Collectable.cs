@@ -8,11 +8,12 @@ namespace calgon
 {
     abstract class Collectable : GameObject
     {
-        public static string[] collectableSymbolsArr = { "@", "$", "B","*" };
+        public static string[] collectableSymbolsArr = { "@", "$", "B", "*" };
         private string collectableSymbol;
         private ConsoleColor color;
 
-        public Collectable(int posX, int posY, string collectableSymbol, ConsoleColor color) : base(posX, posY)
+        public Collectable(int posX, int posY, string collectableSymbol, ConsoleColor color)
+            : base(posX, posY)
         {
             this.CollectableSymbol = collectableSymbol;
             this.Color = color;
@@ -39,7 +40,7 @@ namespace calgon
                 matrixPosX = entity.CollisionCheck(entity.PosX, entity.PosY, entity.SizeX, entity.SizeY, direction)[0];
                 matrixPosY = entity.CollisionCheck(entity.PosX, entity.PosY, entity.SizeX, entity.SizeY, direction)[1];
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return false;
             }

@@ -10,7 +10,7 @@ namespace calgon
     class Game
     {
         public static void Main()
-        {  
+        {
             int bufferHeight = 40;
             int bufferWidth = 170;
             // Setting the parameters of the Console
@@ -65,7 +65,6 @@ namespace calgon
             SideInfo.PrintInfo();
             while (tempPlayer.isAlive)
             {
-                //tempPlayer.SetBomb();
                 tempPlayer.MovePlayer();
                 foreach (Enemy dragon in dragons)
                 {

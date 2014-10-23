@@ -28,20 +28,7 @@ namespace calgon
             playerSymbol[2, 2] = "\\";
         }
 
-        //public void SetBomb()
-        //{
-        //    if (Console.KeyAvailable)
-        //    {
-        //        ConsoleKeyInfo pressedKey = Console.ReadKey(true);
-        //        while (Console.KeyAvailable) Console.ReadKey(true);
-        //        if (pressedKey.Key == ConsoleKey.Enter)
-        //        {
-        //           Bomb curBomb= new Bomb(this.PosY+2,this.PosX+3);
-        //           curBomb.DrawBomb();
-        //           Bomb.setBomb = true;
-        //        }
-        //    }
-        //}
+
         public void checkIfAlive()
         {
             if (Entity.Health <= 0)
@@ -145,11 +132,9 @@ namespace calgon
                         }
                     }
                 }
-                else if(pressedKey.Key == ConsoleKey.Enter)
+                else if (pressedKey.Key == ConsoleKey.Enter && Bomb.setBomb == false && Player.bombs > 0)
                 {
-                    Bomb curBomb = new Bomb(this.PosY + 2, this.PosX + 3);
-                    curBomb.DrawBomb();
-                    Bomb.setBomb = true;
+                    Bomb.NewBomb(this.PosY + 2, this.PosX + 3);
                 }
                 DrawPlayer();
             }

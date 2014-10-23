@@ -7,18 +7,26 @@ namespace calgon
 {
     class Bomb : GameObject
     {
+        private static Bomb curBomb = new Bomb(0, 0);
         public static bool setBomb = false;
-        public Bomb( int posY,int posX)
+        public Bomb(int posY, int posX)
             : base(posX, posY)
         {
 
         }
-        public void DrawBomb()
+        public static void NewBomb(int posX, int posY)
         {
-            Console.SetCursorPosition(this.PosX , this.PosY );
+            Bomb.curBomb = new Bomb(posX, posY);
+            Console.SetCursorPosition(Bomb.curBomb.PosX, Bomb.curBomb.PosY);
             Console.Write("!");
-            GameField.matrix[this.PosY , this.PosX ] = "!";
+            GameField.matrix[Bomb.curBomb.PosY, Bomb.curBomb.PosX] = "!";
+            Bomb.setBomb = true;
+            Player.bombs--;
         }
-      //  public static DeleteBoomb()
+        public static void DeleteBoomb()
+        {
+            GameField.matrix[Bomb.curBomb.PosY, Bomb.curBomb.PosX] = " ";
+            Bomb.setBomb = false;
+        }
     }
 }
