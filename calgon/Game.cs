@@ -72,6 +72,8 @@ namespace calgon
                     tempPlayer.ChekForEnemy();
                 }
             }
+
+            SideInfo.GameOver();
         }
     }
 }

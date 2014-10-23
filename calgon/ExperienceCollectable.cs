@@ -8,7 +8,7 @@ namespace calgon
 {
     class ExperienceCollectable : Collectable
     {
-        public static int bonusExp = 10;
+        public static int bonusExp = 50;
 
         public ExperienceCollectable(int posX, int posY) : base(posX, posY, "$", ConsoleColor.Yellow)
         {

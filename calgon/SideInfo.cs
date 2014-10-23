@@ -79,5 +79,16 @@ namespace calgon
         {
             Utilities.PrintStringOnPositon(158, 6, new string(' ', 10), healthColor);
         }
+
+        public static void GameOver()
+        {
+            Console.Clear();
+            Utilities.PrintStringOnPositon(80, 10, "GAME OVER", ConsoleColor.Red);
+            Utilities.PrintStringOnPositon(80, 12, "Experience: " + Entity.Exp, ConsoleColor.White);
+            Utilities.PrintStringOnPositon(80, 13, "Level: " + Entity.Level, ConsoleColor.White);
+            Utilities.PrintStringOnPositon(80, 14, "Points: " + Entity.Points, ConsoleColor.White);
+            Utilities.PrintStringOnPositon(80, 18, "PRESS ENTER TO EXIT", ConsoleColor.Green);
+            Console.ReadKey();
+        }
     }
 }

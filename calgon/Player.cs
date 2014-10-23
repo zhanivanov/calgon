@@ -10,6 +10,9 @@ namespace calgon
     {
         private string[,] playerSymbol = new string[3, 3];
         public bool isAlive = true;
+        public int expStep = 99;
+        private int bombsCounter = 1;
+        private int currLevel;
 
         private GameObject currPos = new GameObject(1, 1);
         public static int bombs = 0;
@@ -28,12 +31,27 @@ namespace calgon
             playerSymbol[2, 2] = "\\";
         }
 
+        private void LevelUpdate()
+        {
+            this.currLevel = Entity.Level;
+            if (Entity.Exp > this.expStep)
+            {
+                Entity.Level += 1;
+                this.bombsCounter = 1;
+                SideInfo.PrintInfo();
+                expStep += Entity.Exp;
+            }
+            if (Entity.Level > currLevel)
+            {
+                Entity.Health += Entity.Level * 100;
+            }
+        }
 
         public void checkIfAlive()
         {
             if (Entity.Health <= 0)
             {
-                isAlive = false;
+                this.isAlive = false;
             }
         }
 
@@ -132,9 +150,11 @@ namespace calgon
                         }
                     }
                 }
-                else if (pressedKey.Key == ConsoleKey.Enter && Bomb.setBomb == false && Player.bombs > 0)
+                else if (pressedKey.Key == ConsoleKey.Enter && this.bombsCounter <= Entity.Level && Player.bombs > 0)
                 {
+                    this.bombsCounter += 1;
                     Bomb.NewBomb(this.PosY + 2, this.PosX + 3);
+                    SideInfo.PrintInfo();
                 }
                 DrawPlayer();
             }
@@ -142,7 +162,8 @@ namespace calgon
 
         public void DrawPlayer()
         {
-            checkIfAlive();
+            this.checkIfAlive();
+            this.LevelUpdate();
             Console.SetCursorPosition(this.PosX, this.PosY);
             Console.ForegroundColor = Color;
             int countLine = 1;
