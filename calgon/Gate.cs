@@ -6,32 +6,29 @@ using System.Threading.Tasks;
 
 namespace calgon
 {
-    class Gate 
+    class Gate :GameObject
     {
-        private int x;
-        private int y;
+      
         private string gateSymbol;
         private ConsoleColor gateColor;
 
-        public Gate(int x, int y, string gateSymbol, ConsoleColor color)
+        public Gate(int posX, int posY, string gateSymbol, ConsoleColor color)
+            : base(posX, posY)
         {
-            this.X = x;
-            this.Y = y;
             this.GateSymbol = gateSymbol;
             this.GateColor = color;
         }
 
-        public int X { get; set; }
-        public int Y { get; set; }
-        public string GateSymbol { get; set; }
-        public ConsoleColor GateColor { get; set; }
+
+        public string GateSymbol { get { return this.gateSymbol; } set { this.gateSymbol = value; } }
+        public ConsoleColor GateColor { get { return this.gateColor; } set { this.gateColor = value; } }
 
         public void DrawGate()
         {
             Console.ForegroundColor = this.gateColor;
-            for (int row = this.X; row < this.X + 5; row++)
+            for (int row = this.PosX; row < this.PosX + 5; row++)
             {
-                for (int col = this.Y; col < this.Y + 5; col++)
+                for (int col = this.PosY; col < this.PosY + 5; col++)
                 {
                     GameField.matrix[row, col] = this.GateSymbol;
                     Utilities.PrintStringOnPositon(col, row, this.GateSymbol, this.GateColor);

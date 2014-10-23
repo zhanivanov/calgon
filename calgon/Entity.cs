@@ -10,7 +10,7 @@ namespace calgon
     {
         private int exp;
         private int level;
-        private int health;
+        protected int health;
         private int points;
         private ConsoleColor color;
 
