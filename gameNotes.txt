@@ -1,5 +1,6 @@
 collectable types
 	@ - health
 	$ - experience
-	# - gun
-	* - bonus points (acummulated for highscore of some kind)
+	B - bomb	* - bonus points (acummulated for highscore of some kind)
+press enter to set bomb
+you have to increase level to be able set bomb
