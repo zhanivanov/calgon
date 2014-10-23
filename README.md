@@ -1,6 +1,4 @@
-Team Calgon's game*
-==================
+Generic RPG
+===========
 
 Team Calgon's RPG game, written in C#.
-
-*Name to be added
